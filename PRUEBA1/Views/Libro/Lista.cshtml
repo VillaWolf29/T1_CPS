@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<PRUEBA1.Models.Libro>;
+<div>
+    <h2>Libros</h2>
+    <a asp-controller="Libro" asp-action="Nuevo" class="btn btn-success mb-3">Nuevo</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Genero</th>
+                <th>FechaPublicacion</th>                
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IdLibro</td>
+                    <td>@item.Titulo</td>
+                    <td>@item.Autor</td>
+                    <td>@item.Genero</td>
+                    <td>@item.FechaPublicacion.ToString()</td>                    
+                    <td>
+                        <a asp-controller="Libro" asp-action="Editar" asp-route-id="@item.IdLibro" class="btn btn-primary mb-3">Editar</a>
+                        <a asp-controller="Libro" asp-action="Eliminar" asp-route-id="@item.IdLibro" class="btn btn-danger" onclick="return confirmar()">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts {
+    <script>
+        function confirmar() {
+            return confirm("¿Estás seguro de que quieres eliminar este libro?");
+        }
+    </script>
+}

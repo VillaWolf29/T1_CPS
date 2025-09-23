@@ -1,0 +1,37 @@
+﻿@model PRUEBA1.ViewModels.LoginVM
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>    
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-5">
+                <h3 class="text-center mb-4">Iniciar Sesión</h3>
+                <form asp-controller="Acceso" asp-action="Login" method="post" autocomplete="off">
+                    <div class="mb-2">
+                        <input class="form-control" type="email" required asp-for="Correo" placeholder="Correo electrónico" />
+                    </div>
+                    <div class="mb-2">
+                        <input class="form-control" type="text" required asp-for="Contraseña" placeholder="Contraseña" />
+                    </div>
+                    <button class="btn btn-light w-100" type="submit">Entrar</button>
+                    @if (ViewData["Mensaje"] != null)
+                    {
+                        <div class="mt-2">
+                            @ViewData["Mensaje"]
+                        </div>
+                    }
+                </form>
+                <div class="text-center mt-3">
+                    <small>¿No tienes una cuenta? <a asp-controller="Acceso" asp-action="Registro">Regístrate</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

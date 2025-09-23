@@ -1,0 +1,54 @@
+﻿@model PRUEBA1.ViewModels.UsuarioVM
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro</title>    
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-5">
+                <h3 class="text-center mb-4">Registro</h3>
+                <form asp-controller="Acceso" asp-action="Registro" method="post" autocomplete="off">
+                    <div class="mb-2">
+                        <input class="form-control" type="text" required asp-for="Nombre" placeholder="Nombre" />
+                    </div>
+                    <div class="mb-2">
+                        <input class="form-control" type="text" required asp-for="Apellido" placeholder="Apellidos" />
+                    </div>
+                    <div class="mb-2">
+                        <input class="form-control" type="email" required asp-for="Correo" placeholder="Correo electrónico" />
+                    </div>
+                    <div class="mb-2">
+                        <input class="form-control" type="text" required asp-for="Contraseña" placeholder="Contraseña" />
+                    </div>
+                    <div class="mb-2">
+                        <input class="form-control" type="text" required asp-for="ConfirmarContraseña" placeholder="Repita Contraseña" />
+                    </div>
+                    <div>
+                        <label for="IdRol">Rol</label>
+                        <select name="IdRol" id="IdRol">
+                            <option value="1">Administrador</option>
+                            <option value="2">Usuario</option>
+                        </select>
+                    </div>                   
+
+                    <button class="btn btn-primary w-100" type="submit">Registrarse</button>
+                    @if (ViewData["Mensaje"] != null)
+                    {
+                        <div class="alert alert-danger mt-2" role="alert">
+                            @ViewData["Mensaje"]
+                        </div>
+                    }
+                </form>
+                <div class="text-center mt-3">
+                    <small>¿Ya tienes una cuenta? <a asp-controller="Acceso" asp-action="Login">Iniciar Sesión</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
