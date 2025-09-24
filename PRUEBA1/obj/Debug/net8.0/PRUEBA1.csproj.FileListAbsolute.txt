@@ -342,3 +342,4 @@ C:\Users\Abed\Documents\UPN\Calidad y Pruebas\T1_CPS\PRUEBA1\obj\Debug\net8.0\re
 C:\Users\Abed\Documents\UPN\Calidad y Pruebas\T1_CPS\PRUEBA1\obj\Debug\net8.0\PRUEBA1.pdb
 C:\Users\Abed\Documents\UPN\Calidad y Pruebas\T1_CPS\PRUEBA1\obj\Debug\net8.0\PRUEBA1.genruntimeconfig.cache
 C:\Users\Abed\Documents\UPN\Calidad y Pruebas\T1_CPS\PRUEBA1\obj\Debug\net8.0\ref\PRUEBA1.dll
+C:\Users\Abed\Documents\UPN\Calidad y Pruebas\T1_CPS\PRUEBA1\bin\Debug\net8.0\BCrypt.Net-Next.dll

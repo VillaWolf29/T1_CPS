@@ -32,9 +32,12 @@ namespace PRUEBA1.Data
                 tb.Property(col => col.Nombre).HasMaxLength(50);
                 tb.Property(col => col.Apellido).HasMaxLength(50);
                 tb.Property(col => col.Correo).HasMaxLength(50);
-                tb.Property(col => col.Contraseña).HasMaxLength(50);
+                tb.Property(col => col.Contraseña).HasMaxLength(250);
             });
             modelBuilder.Entity<Usuario>().ToTable("Usuario");
+            modelBuilder.Entity<Usuario>().HasData(
+                new Usuario {IdUsuario=1, Nombre = "Abed", Apellido = "Llovera", Correo = "admin@gmail.com", Contraseña = "$2a$11$ftbwkevIm.kVrZCJtWwVFOnz8EICF6isvJeKp0ZIC.dCNM0t6ZHti", IdRol = 1 }
+            );
 
             modelBuilder.Entity<Libro>(tb =>
             {
@@ -43,6 +46,8 @@ namespace PRUEBA1.Data
                 tb.Property(col => col.Autor).HasMaxLength(50);
                 tb.Property(col => col.Titulo).HasMaxLength(100);                
                 tb.Property(col => col.Genero).HasMaxLength(50);
+                tb.Property(col => col.Precio).IsRequired();
+                tb.Property(col => col.Stock).IsRequired();
             });
             modelBuilder.Entity<Libro>().ToTable("Libro");
 

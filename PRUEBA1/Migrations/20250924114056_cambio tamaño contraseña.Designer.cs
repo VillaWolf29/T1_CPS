@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PRUEBA1.Data;
 
@@ -11,9 +12,11 @@ using PRUEBA1.Data;
 namespace PRUEBA1.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250924114056_cambio tamaño contraseña")]
+    partial class cambiotamañocontraseña
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -350,17 +353,6 @@ namespace PRUEBA1.Migrations
                     b.HasIndex("IdRol");
 
                     b.ToTable("Usuario", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            IdUsuario = 1,
-                            Apellido = "Llovera",
-                            Contraseña = "$2a$11$ftbwkevIm.kVrZCJtWwVFOnz8EICF6isvJeKp0ZIC.dCNM0t6ZHti",
-                            Correo = "admin@gmail.com",
-                            IdRol = 1,
-                            Nombre = "Abed"
-                        });
                 });
 
             modelBuilder.Entity("PRUEBA1.Models.Venta", b =>

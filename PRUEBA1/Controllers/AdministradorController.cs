@@ -3,9 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using PRUEBA1.Data;
 using Microsoft.EntityFrameworkCore;
 using PRUEBA1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PRUEBA1.Controllers
 {
+    //Linea que protege a la Vista, comentar para realizar pruebas
+    [Authorize(Roles= "Administrador")]
     public class AdministradorController : Controller
     {
         private readonly AppDBContext _appDBcontext;

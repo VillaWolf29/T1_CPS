@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PRUEBA1.Data;
@@ -6,6 +7,9 @@ using PRUEBA1.Models;
 
 namespace PRUEBA1.Controllers
 {
+    //Linea que protege a la Vista, comentar para realizar pruebas
+    [Authorize(Roles = "1")]
+
     public class ProductoController : Controller
     {
         private readonly AppDBContext _dbContext;

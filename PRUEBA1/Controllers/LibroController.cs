@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AspNetCoreGeneratedDocument;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using PRUEBA1.Data;
 using PRUEBA1.Models;
 using PRUEBA1.ViewModels;
-using Microsoft.EntityFrameworkCore;
-using AspNetCoreGeneratedDocument;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PRUEBA1.Controllers
 {
+    //Linea que protege a la Vista, comentar para realizar pruebas
+    //[Authorize(Roles = "Administrador")]
     public class LibroController : Controller
     {
         private readonly AppDBContext _appDBcontext;

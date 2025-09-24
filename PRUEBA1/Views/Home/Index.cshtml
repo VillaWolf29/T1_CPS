@@ -1,8 +1,304 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Catálogo";
+    var productos = ViewBag.Productos as List<PRUEBA1.Models.Producto>;
+    var libros = ViewBag.Libros as List<PRUEBA1.Models.Libro>;
 }
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #1cc88a;
+            --dark-color: #2e3a59;
+            --light-color: #f8f9fc;
+            --accent-color: #f6c23e;
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        body {
+            background-color: #f5f7fb;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #224abe 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+/*             .header::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+                opacity: 0.1;
+            } */
+
+        .display-4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .btn-login {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+            .btn-login:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                color: var(--primary-color);
+                text-decoration: none;
+            }
+
+        .section-title {
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+            .section-title::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background-color: var(--primary-color);
+                border-radius: 2px;
+            }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid #e3e6f0;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .product-item, .book-item {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .book-item {
+            border-left-color: var(--secondary-color);
+        }
+
+            .product-item:hover, .book-item:hover {
+                background-color: rgba(78, 115, 223, 0.05);
+                padding-left: 20px;
+            }
+
+        .product-name, .book-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .product-price, .book-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .book-author {
+            color: #6c757d;
+            font-style: italic;
+            margin-bottom: 0.25rem;
+        }
+
+        .book-stock {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .no-items {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+            .no-items i {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                opacity: 0.5;
+            }
+
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+
+        .display-4 {
+            font-size: 2rem;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4">Catálogo de Productos y Libros</h1>
+                    <p class="lead">Descubre nuestra amplia selección de productos y libros disponibles</p>
+                </div>
+                <div class="col-md-4 text-md-right">
+                    <a class="btn-login" asp-area="" asp-controller="Acceso" asp-action="Login">
+                        <i class="fas fa-sign-in-alt me-2"></i>Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row">
+            <!-- Productos Section -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="section-title mb-0">
+                            <i class="fas fa-box-open me-2"></i>Productos
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        @if (productos != null && productos.Any())
+                        {
+                            foreach (var producto in productos)
+                            {
+                                <div class="product-item">
+                                    <div class="product-name">@producto.Nombre</div>
+                                    <div class="product-price">@producto.Precio.ToString("C")</div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="no-items">
+                                <i class="fas fa-box-open"></i>
+                                <p>No hay productos disponibles en este momento.</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Libros Section -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="section-title mb-0">
+                            <i class="fas fa-book me-2"></i>Libros
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        @if (libros != null && libros.Any())
+                        {
+                            foreach (var libro in libros)
+                            {
+                                <div class="book-item">
+                                    <div class="book-title">@libro.Titulo</div>
+                                    <div class="book-author">por @libro.Autor</div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="book-price">@libro.Precio.ToString("C")</div>
+                                        <span class="book-stock">Stock: @libro.Stock</span>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="no-items">
+                                <i class="fas fa-book"></i>
+                                <p>No hay libros disponibles en este momento.</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Catálogo de Productos y Libros. Todos los derechos reservados.</p>
+            <p class="mb-0">
+                <a href="#" class="text-white me-3"><i class="fas fa-envelope me-1"></i> Contacto</a>
+                <a href="#" class="text-white me-3"><i class="fas fa-info-circle me-1"></i> Acerca de</a>
+                <a href="#" class="text-white"><i class="fas fa-shield-alt me-1"></i> Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
