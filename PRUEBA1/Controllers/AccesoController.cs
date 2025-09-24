@@ -22,11 +22,18 @@ namespace PRUEBA1.Controllers
         [HttpPost]
         public async Task<IActionResult> Registro(UsuarioVM usuariovm)
         {
+            if (!ModelState.IsValid)
+            {
+                ViewData["Mensaje"] = "Por favor complete todos los campos correctamente";
+                return View(usuariovm);
+            }
+
             if (usuariovm.Contraseña != usuariovm.ConfirmarContraseña)
             {
                 ViewData["Mensaje"] = "Las contraseñas no coinciden";
                 return View();
             }
+            usuariovm.IdRol = 2;
 
             Usuario usuario = new Usuario()
             {
@@ -55,7 +62,7 @@ namespace PRUEBA1.Controllers
             Usuario? usuarioEncontrado = await _appDBcontext.Usuarios.Where(u => u.Correo == Log.Correo && u.Contraseña == Log.Contraseña).FirstOrDefaultAsync();
             if (usuarioEncontrado == null)
             {
-                ViewData["Mensaje"] = "Usuario no encontrado";
+                ViewData["Mensaje"] = "Usuario o Contraseña incorrectos";
                 return View();
             }
             if (usuarioEncontrado.IdRol == 1) 

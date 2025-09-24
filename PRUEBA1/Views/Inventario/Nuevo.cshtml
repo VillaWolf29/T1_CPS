@@ -1,0 +1,149 @@
+﻿@model PRUEBA1.Models.Inventario
+@{
+    ViewData["Title"] = "Nuevo Registro de Inventario";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-plus-circle"></i> @ViewData["Title"]
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Nuevo" method="post" id="inventarioForm">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="IdProducto" class="form-label fw-bold">Producto</label>
+                                    <select asp-for="IdProducto" asp-items="@ViewBag.Productos" class="form-select">
+                                        <option value="">-- Seleccione un Producto --</option>
+                                    </select>
+                                    <span asp-validation-for="IdProducto" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="IdLibro" class="form-label fw-bold">Libro</label>
+                                    <select asp-for="IdLibro" asp-items="@ViewBag.Libros" class="form-select">
+                                        <option value="">-- Seleccione un Libro --</option>
+                                    </select>
+                                    <span asp-validation-for="IdLibro" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="Stock" class="form-label fw-bold">Stock Inicial</label>
+                                    <div class="input-group">
+                                        <input asp-for="Stock" type="number" class="form-control" placeholder="0" min="0" />
+                                        <span class="input-group-text">unidades</span>
+                                    </div>
+                                    <span asp-validation-for="Stock" class="text-danger"></span>
+                                    <small class="form-text text-muted">Stock inicial del producto en inventario</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="form-label fw-bold">Fecha de Registro</label>
+                                    <input type="text" class="form-control" value="@DateTime.Now.ToString("dd/MM/yyyy HH:mm")" readonly />
+                                    <small class="form-text text-muted">Se registrará automáticamente</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Información de ayuda -->
+                        <div class="alert alert-info">
+                            <h6><i class="fas fa-info-circle"></i> Información importante:</h6>
+                            <ul class="mb-0">
+                                <li>El stock no puede ser negativo</li>
+                                <li>No puede existir más de un registro para el mismo producto y libro</li>
+                                <li>La fecha de actualización se genera automáticamente</li>
+                            </ul>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                            <a asp-action="Lista" class="btn btn-outline-secondary me-md-2">
+                                <i class="fas fa-arrow-left"></i> Volver a la Lista
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-save"></i> Guardar Registro
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Validación del formulario
+        document.getElementById('inventarioForm').addEventListener('submit', function(e) {
+            const stock = document.querySelector('input[name="Stock"]').value;
+            const producto = document.querySelector('select[name="IdProducto"]').value;
+            const libro = document.querySelector('select[name="IdLibro"]').value;
+
+            // Validar stock no negativo
+            if (stock < 0) {
+                e.preventDefault();
+                alert('El stock no puede ser negativo');
+                return false;
+            }
+
+            // Validar que se seleccionen ambos campos
+            if (!producto || !libro) {
+                e.preventDefault();
+                alert('Debe seleccionar tanto un producto como un libro');
+                return false;
+            }
+
+            return true;
+        });
+
+        // Mostrar advertencia si el stock es bajo
+        document.querySelector('input[name="Stock"]').addEventListener('change', function() {
+            const stock = parseInt(this.value);
+            const alertDiv = document.createElement('div');
+
+            // Remover alertas anteriores
+            const existingAlert = this.parentNode.querySelector('.stock-alert');
+            if (existingAlert) {
+                existingAlert.remove();
+            }
+
+            if (stock <= 10 && stock >= 0) {
+                alertDiv.className = 'stock-alert alert alert-warning mt-2';
+                alertDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> <strong>Advertencia:</strong> El stock está en un nivel bajo';
+                this.parentNode.appendChild(alertDiv);
+            } else if (stock < 0) {
+                alertDiv.className = 'stock-alert alert alert-danger mt-2';
+                alertDiv.innerHTML = '<i class="fas fa-times-circle"></i> <strong>Error:</strong> El stock no puede ser negativo';
+                this.parentNode.appendChild(alertDiv);
+            }
+        });
+
+        // Mejorar la experiencia del usuario con los select
+        document.addEventListener('DOMContentLoaded', function() {
+            const selects = document.querySelectorAll('select.form-select');
+            selects.forEach(select => {
+                select.addEventListener('change', function() {
+                    if (this.value) {
+                        this.classList.remove('is-invalid');
+                        this.classList.add('is-valid');
+                    } else {
+                        this.classList.remove('is-valid');
+                        this.classList.add('is-invalid');
+                    }
+                });
+            });
+        });
+    </script>
+}

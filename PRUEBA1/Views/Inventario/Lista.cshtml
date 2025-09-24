@@ -1,0 +1,197 @@
+﻿@model IEnumerable<PRUEBA1.Models.Inventario>
+@{
+    ViewData["Title"] = "Lista de Inventario";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>
+            <i class="fas fa-boxes"></i> Lista de Inventario
+        </h2>
+        <div>
+            <a asp-action="Nuevo" class="btn btn-success">
+                <i class="fas fa-plus"></i> Nuevo Registro
+            </a>
+            <a asp-action="ReporteStockBajo" class="btn btn-warning">
+                <i class="fas fa-exclamation-triangle"></i> Stock Bajo
+            </a>
+        </div>
+    </div>
+
+    <!-- Mostrar mensajes temporales -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle"></i> @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-circle"></i> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Producto</th>
+                        <th>Libro</th>
+                        <th>Stock Actual</th>
+                        <th>Última Actualización</th>
+                        <th>Estado Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdInventario</td>
+                            <td>
+                                @if (item.Producto != null)
+                                {
+                                    <strong>@item.Producto.Nombre</strong>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Producto no encontrado</span>
+                                }
+                            </td>
+                            <td>
+                                @if (item.Libro != null)
+                                {
+                                    <em>@item.Libro.Titulo</em>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Libro no encontrado</span>
+                                }
+                            </td>
+                            <td>
+                                <span class="fw-bold @(item.Stock <= 10 ? "text-danger" : "text-success")">
+                                    @item.Stock
+                                </span>
+                            </td>
+                            <td>@item.FechaActualizacion.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>
+                                @if (item.Stock <= 5)
+                                {
+                                    <span class="badge bg-danger">Crítico</span>
+                                }
+                                else if (item.Stock <= 10)
+                                {
+                                    <span class="badge bg-warning">Bajo</span>
+                                }
+                                else if (item.Stock <= 20)
+                                {
+                                    <span class="badge bg-info">Normal</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success">Alto</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a asp-action="Editar" asp-route-id="@item.IdInventario"
+                                       class="btn btn-primary btn-sm" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a asp-action="AjustarStock" asp-route-id="@item.IdInventario"
+                                       class="btn btn-warning btn-sm" title="Ajustar Stock">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </a>
+                                    <a asp-action="Eliminar" asp-route-id="@item.IdInventario"
+                                       class="btn btn-danger btn-sm" title="Eliminar"
+                                       onclick="return confirm('¿Está seguro de eliminar este registro de inventario?')">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Resumen del inventario -->
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card text-white bg-primary">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Items</h5>
+                        <h3>@Model.Count()</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title">Stock Alto</h5>
+                        <h3>@Model.Count(i => i.Stock > 20)</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-warning">
+                    <div class="card-body">
+                        <h5 class="card-title">Stock Bajo</h5>
+                        <h3>@Model.Count(i => i.Stock <= 10 && i.Stock > 5)</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-danger">
+                    <div class="card-body">
+                        <h5 class="card-title">Stock Crítico</h5>
+                        <h3>@Model.Count(i => i.Stock <= 5)</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            <i class="fas fa-info-circle fa-2x mb-3"></i>
+            <h4>No hay registros de inventario</h4>
+            <p class="mb-0">Comienza agregando un nuevo registro de inventario.</p>
+            <a asp-action="Nuevo" class="btn btn-primary mt-3">
+                <i class="fas fa-plus"></i> Crear Primer Registro
+            </a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Auto-cierre de alertas después de 5 segundos
+        setTimeout(function() {
+            var alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                var bsAlert = new bootstrap.Alert(alert);
+                bsAlert.close();
+            });
+        }, 5000);
+
+        // Confirmación antes de eliminar
+        document.addEventListener('DOMContentLoaded', function() {
+            var deleteButtons = document.querySelectorAll('a[title="Eliminar"]');
+            deleteButtons.forEach(function(button) {
+                button.addEventListener('click', function(e) {
+                    if (!confirm('¿Está seguro de que desea eliminar este registro de inventario?')) {
+                        e.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+}

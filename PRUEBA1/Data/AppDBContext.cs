@@ -14,6 +14,13 @@ namespace PRUEBA1.Data
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Reseña> Reseñas { get; set; }
         public DbSet<Autor> Autores { get; set; }
+        public DbSet<Producto> productos { get; set; }
+
+        public DbSet<Venta> ventas { get; set; }
+
+        public DbSet<DetalleVenta> detalle { get; set; }
+        public DbSet<Inventario> inventario { get; set; }
+        public DbSet<Pedido> pedidos { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -72,7 +79,125 @@ namespace PRUEBA1.Data
                 new Rol { IdRol = 2, Nombre = "Usuario", Descripcion = "Usuario" }
             );
 
-            
+            modelBuilder.Entity<Venta>(tb =>
+            {
+                tb.HasKey(col => col.IdVenta);
+                tb.Property(col => col.IdVenta).UseIdentityColumn().ValueGeneratedOnAdd();
+                tb.Property(col => col.FechaVenta).IsRequired().HasDefaultValueSql("GETDATE()"); 
+                tb.Property(col => col.Total).IsRequired().HasColumnType("decimal(18,2)");
+                tb.Property(col => col.MetodoPago).IsRequired().HasMaxLength(50);
+                tb.Property(col => col.Estado).IsRequired().HasMaxLength(20).HasDefaultValue("Completada");
+                tb.Property(col => col.IdUsuario).IsRequired();
+
+                tb.HasOne(v => v.Usuario)
+                    .WithMany()
+                    .HasForeignKey(v => v.IdUsuario)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                tb.HasMany(v => v.Detalles)
+                    .WithOne(d => d.Venta)
+                    .HasForeignKey(d => d.IdVenta)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+            modelBuilder.Entity<Venta>().ToTable("Ventas");
+
+            modelBuilder.Entity<DetalleVenta>(tb =>
+            {
+                tb.HasKey(col => col.IdDetalle);
+                tb.Property(col => col.IdDetalle).UseIdentityColumn().ValueGeneratedOnAdd();
+                tb.Property(col => col.Cantidad).IsRequired();
+                tb.Property(col => col.PrecioUnitario).IsRequired().HasColumnType("decimal(18,2)");
+                tb.Property(col => col.Subtotal).IsRequired().HasColumnType("decimal(18,2)");
+                tb.Property(col => col.IdLibro).IsRequired(false);
+                tb.Property(col => col.IdProducto).IsRequired(false);
+                tb.Property(col => col.IdVenta).IsRequired();
+
+                tb.HasOne(d => d.Venta)
+                    .WithMany(v => v.Detalles)
+                    .HasForeignKey(d => d.IdVenta)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                tb.HasOne(d => d.Libro)
+                    .WithMany()
+                    .HasForeignKey(d => d.IdLibro)
+                    .OnDelete(DeleteBehavior.SetNull);
+
+                tb.HasOne(d => d.Producto)
+                    .WithMany()
+                    .HasForeignKey(d => d.IdProducto)
+                    .OnDelete(DeleteBehavior.SetNull);
+
+            });
+            modelBuilder.Entity<DetalleVenta>().ToTable("DetalleVenta");
+
+            modelBuilder.Entity<Inventario>(tb =>
+            {
+                tb.HasKey(col => col.IdInventario);
+                tb.Property(col => col.IdInventario).UseIdentityColumn().ValueGeneratedOnAdd();
+                tb.Property(col => col.Stock).IsRequired();
+                tb.Property(col => col.FechaActualizacion).IsRequired().HasDefaultValueSql("GETDATE()");
+                tb.Property(col => col.IdLibro).IsRequired();
+                tb.Property(col => col.IdProducto).IsRequired();
+
+                tb.HasOne(i => i.Libro)
+                    .WithMany()
+                    .HasForeignKey(i => i.IdLibro)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                tb.HasOne(i => i.Producto)
+                    .WithMany()
+                    .HasForeignKey(i => i.IdProducto)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<Inventario>().ToTable("Inventario");
+
+            modelBuilder.Entity<Pedido>(tb =>
+            {
+                tb.HasKey(col => col.IdReserva);
+                tb.Property(col => col.IdReserva).UseIdentityColumn().ValueGeneratedOnAdd();
+                tb.Property(col => col.Cantidad).IsRequired();
+                tb.Property(col => col.FechaReserva).IsRequired().HasDefaultValueSql("GETDATE()");
+                tb.Property(col => col.FechaEntrega).IsRequired(false);
+                tb.Property(col => col.Estado).IsRequired().HasMaxLength(50).HasDefaultValue("Pendiente");
+                tb.Property(col => col.IdUsuario).IsRequired();
+                tb.Property(col => col.IdLibro).IsRequired();
+                tb.Property(col => col.IdProducto).IsRequired(false);
+
+                tb.HasOne(p => p.Usuario)
+                    .WithMany()
+                    .HasForeignKey(p => p.IdUsuario)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                tb.HasOne(p => p.Libro)
+                    .WithMany()
+                    .HasForeignKey(p => p.IdLibro)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                tb.HasOne(p => p.Producto)
+                    .WithMany()
+                    .HasForeignKey(p => p.IdProducto)
+                    .OnDelete(DeleteBehavior.SetNull);
+            });
+            modelBuilder.Entity<Pedido>().ToTable("Pedido");
+
+            modelBuilder.Entity<Producto>(tb =>
+            {
+                tb.HasKey(col => col.IdProducto);
+                tb.Property(col => col.IdProducto).UseIdentityColumn().ValueGeneratedOnAdd();
+                tb.Property(col => col.Nombre).IsRequired().HasMaxLength(100);
+                tb.Property(col => col.Descripcion).IsRequired(false).HasMaxLength(500);
+                tb.Property(col => col.Precio).IsRequired().HasColumnType("decimal(18,2)");
+                tb.Property(col => col.Categoria).IsRequired().HasMaxLength(50);
+                tb.Property(col => col.Stock).IsRequired();
+                tb.Property(col => col.Activo).IsRequired().HasDefaultValue(true);
+
+                tb.HasIndex(p => p.Nombre).IsUnique();
+                tb.HasIndex(p => p.Categoria);
+                tb.HasIndex(p => p.Activo);
+            });
+
+            modelBuilder.Entity<Producto>().ToTable("Producto");
 
             base.OnModelCreating(modelBuilder);
         }

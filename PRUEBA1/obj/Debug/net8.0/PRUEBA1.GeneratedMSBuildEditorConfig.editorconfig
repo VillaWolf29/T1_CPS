@@ -48,6 +48,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Inventario/Lista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xMaXN0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Inventario/Nuevo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xOdWV2by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Libro/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cRWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +66,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Libro/Nuevo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cTnVldm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Producto/Lista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTGlzdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Producto/Nuevo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTnVldm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Shared/Error.cshtml]
