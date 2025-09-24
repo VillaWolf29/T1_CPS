@@ -17,85 +17,101 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PRUEBA1
 build_property.RootNamespace = PRUEBA1
-build_property.ProjectDir = C:\Users\Abed\Documents\UPN\Calidad y Pruebas\T1_CPS\PRUEBA1\
+build_property.ProjectDir = D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Abed\Documents\UPN\Calidad y Pruebas\T1_CPS\PRUEBA1
+build_property.MSBuildProjectDirectory = D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Acceso/AccessDenied.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Acceso/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXEFjY2Vzc0RlbmllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Acceso/Login.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Acceso/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Acceso/Registro.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Acceso/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXFJlZ2lzdHJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Administrador/Admin.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Administrador/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Home/Index.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Home/Privacy.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Inventario/Lista.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Inventario/Lista.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xMaXN0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Inventario/Nuevo.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Inventario/Nuevo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb1xOdWV2by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Libro/Editar.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Libro/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cRWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Libro/Lista.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Libro/Lista.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cTGlzdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Libro/Nuevo.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Libro/Nuevo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cTnVldm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Producto/Lista.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Pedido/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Pedido/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEVsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Pedido/Lista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXExpc3RhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Pedido/Nuevo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXE51ZXZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Producto/Lista.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTGlzdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Producto/Nuevo.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Producto/Nuevo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTnVldm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Shared/Error.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/_ViewImports.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/_ViewStart.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Abed/Documents/UPN/Calidad y Pruebas/T1_CPS/PRUEBA1/Views/Shared/_Layout.cshtml]
+[D:/UPN/CICLO 8/Calidad y Pruebas de software/T1_CPS/PRUEBA1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bq9m1ke5v0

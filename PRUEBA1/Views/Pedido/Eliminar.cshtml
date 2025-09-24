@@ -1,0 +1,28 @@
+@model PRUEBA1.Models.Pedido
+
+<div class="col-sm-8 offset-sm-2">
+    <div class="card border-danger">
+        <div class="card-header bg-danger text-white">
+            <h4>Eliminar Pedido</h4>
+        </div>
+        <div class="card-body">
+            <p>¿Estás seguro que deseas eliminar este pedido?</p>
+            <ul>
+                <li><strong>Usuario:</strong> @Model.Usuario?.Nombre</li>
+                <li><strong>Libro:</strong> @Model.Libro?.Titulo</li>
+                <li><strong>Producto:</strong> @Model.Producto?.Nombre</li>
+                <li><strong>Cantidad:</strong> @Model.Cantidad</li>
+                <li><strong>Fecha Reserva:</strong> @Model.FechaReserva.ToString("dd/MM/yyyy")</li>
+            </ul>
+
+            <form asp-action="Eliminar" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="IdReserva" />
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <a asp-action="Lista" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

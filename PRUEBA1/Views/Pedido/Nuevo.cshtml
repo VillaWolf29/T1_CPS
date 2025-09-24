@@ -1,0 +1,49 @@
+@model PRUEBA1.Models.Pedido
+
+<div class="col-sm-8 offset-sm-2">
+    <h2>Nuevo Pedido</h2>
+    <form asp-action="Nuevo" method="post">
+        <div class="mb-3">
+            <label asp-for="IdUsuario" class="form-label"></label>
+            <select asp-for="IdUsuario" class="form-control" asp-items="ViewBag.Usuarios"></select>
+            <span asp-validation-for="IdUsuario" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="IdLibro" class="form-label"></label>
+            <select asp-for="IdLibro" class="form-control" asp-items="ViewBag.Libros"></select>
+            <span asp-validation-for="IdLibro" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="IdProducto" class="form-label"></label>
+            <select asp-for="IdProducto" class="form-control" asp-items="ViewBag.Productos">
+                <option value="">-- Ninguno --</option>
+            </select>
+            <span asp-validation-for="IdProducto" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Cantidad" class="form-label"></label>
+            <input asp-for="Cantidad" class="form-control" type="number" />
+            <span asp-validation-for="Cantidad" class="text-danger"></span>
+        </div>
+
+        <!-- FechaReserva y Estado no son necesarios aquí porque los maneja el controller -->
+
+        <div class="mb-3">
+            <label asp-for="FechaEntrega" class="form-label"></label>
+            <input asp-for="FechaEntrega" class="form-control" type="date" />
+            <span asp-validation-for="FechaEntrega" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Guardar</button>
+            <a asp-action="Lista" class="btn btn-warning">Volver</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

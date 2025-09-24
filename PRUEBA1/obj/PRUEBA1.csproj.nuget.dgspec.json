@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abed\\Documents\\UPN\\Calidad y Pruebas\\T1_CPS\\PRUEBA1\\PRUEBA1.csproj": {}
+    "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\PRUEBA1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abed\\Documents\\UPN\\Calidad y Pruebas\\T1_CPS\\PRUEBA1\\PRUEBA1.csproj": {
+    "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\PRUEBA1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abed\\Documents\\UPN\\Calidad y Pruebas\\T1_CPS\\PRUEBA1\\PRUEBA1.csproj",
+        "projectUniqueName": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\PRUEBA1.csproj",
         "projectName": "PRUEBA1",
-        "projectPath": "C:\\Users\\Abed\\Documents\\UPN\\Calidad y Pruebas\\T1_CPS\\PRUEBA1\\PRUEBA1.csproj",
-        "packagesPath": "C:\\Users\\Abed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abed\\Documents\\UPN\\Calidad y Pruebas\\T1_CPS\\PRUEBA1\\obj\\",
+        "projectPath": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\PRUEBA1.csproj",
+        "packagesPath": "C:\\Users\\javm_\\.nuget\\packages\\",
+        "outputPath": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Abed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\javm_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

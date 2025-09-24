@@ -51,7 +51,7 @@ namespace PRUEBA1.Controllers
 
         //public IActionResult Lista()
         //{
-        //    return RedirectToAction("Lista", "Libro");
+          // return RedirectToAction("Lista", "Libro");
         //}
     }
 }

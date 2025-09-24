@@ -219,68 +219,125 @@
     <main class="container">
         <div class="row">
             <!-- Productos Section -->
-            <div class="col-lg-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="section-title mb-0">
-                            <i class="fas fa-box-open me-2"></i>Productos
-                        </h3>
-                    </div>
-                    <div class="card-body">
-                        @if (productos != null && productos.Any())
+                    <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3 class="section-title mb-0">
+                        <i class="fas fa-box-open me-2"></i>Productos
+                    </h3>
+                    <!-- Botón Nuevo Producto -->
+                    <a asp-controller="Producto" asp-action="Nuevo" class="btn btn-success btn-sm">
+                        <i class="fas fa-plus"></i> Nuevo
+                    </a>
+                </div>
+                <div class="card-body">
+                    @if (productos != null && productos.Any())
+                    {
+                        foreach (var producto in productos)
                         {
-                            foreach (var producto in productos)
-                            {
-                                <div class="product-item">
-                                    <div class="product-name">@producto.Nombre</div>
-                                    <div class="product-price">@producto.Precio.ToString("C")</div>
+                            <div class="product-item border-bottom pb-2 mb-2">
+                                <div class="product-name fw-bold">@producto.Nombre</div>
+                                <div class="d-flex justify-content-between align-items-center mt-1">
+                                    <div>
+                                        <span class="product-price">@producto.Precio.ToString("C")</span>
+                                        <span class="product-stock ms-3">Stock: @producto.Stock</span>
+                                    </div>
+                                    <div>
+                                        <!-- Botones de acción -->
+                                        <a asp-controller="Producto" asp-action="Editar" asp-route-id="@producto.IdProducto"
+                                           class="btn btn-primary btn-sm me-1">
+                                            <i class="fas fa-edit"></i> Editar
+                                        </a>
+                                        <a asp-controller="Producto" asp-action="Eliminar" asp-route-id="@producto.IdProducto"
+                                           class="btn btn-danger btn-sm" onclick="return confirmarProducto()">
+                                            <i class="fas fa-trash"></i> Eliminar
+                                        </a>
+                                    </div>
                                 </div>
-                            }
-                        }
-                        else
-                        {
-                            <div class="no-items">
-                                <i class="fas fa-box-open"></i>
-                                <p>No hay productos disponibles en este momento.</p>
                             </div>
                         }
-                    </div>
+                    }
+                    else
+                    {
+                        <div class="no-items text-center p-3">
+                            <i class="fas fa-box-open fa-2x mb-2"></i>
+                            <p>No hay productos disponibles en este momento.</p>
+                        </div>
+                    }
                 </div>
             </div>
+        </div>
+
+        
+        <script>
+            function confirmarProducto() {
+                return confirm("¿Estás seguro de que quieres eliminar este producto?");
+            }
+        </script>
+
+
+
+
 
             <!-- Libros Section -->
             <div class="col-lg-6 mb-4">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header d-flex justify-content-between align-items-center">
                         <h3 class="section-title mb-0">
                             <i class="fas fa-book me-2"></i>Libros
                         </h3>
+                        <!-- Botón Nuevo -->
+                        <a asp-controller="Libro" asp-action="Nuevo" class="btn btn-success btn-sm">
+                            <i class="fas fa-plus"></i> Nuevo
+                        </a>
                     </div>
                     <div class="card-body">
                         @if (libros != null && libros.Any())
                         {
                             foreach (var libro in libros)
                             {
-                                <div class="book-item">
-                                    <div class="book-title">@libro.Titulo</div>
-                                    <div class="book-author">por @libro.Autor</div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="book-price">@libro.Precio.ToString("C")</div>
-                                        <span class="book-stock">Stock: @libro.Stock</span>
+                                <div class="book-item border-bottom pb-2 mb-2">
+                                    <div class="book-title fw-bold">@libro.Titulo</div>
+                                    <div class="book-author text-muted">por @libro.Autor</div>
+                                    <div class="d-flex justify-content-between align-items-center mt-1">
+                                        <div>
+                                            <span class="book-price me-3">@libro.Precio.ToString("C")</span>
+                                            <span class="book-stock">Stock: @libro.Stock</span>
+                                        </div>
+                                        <div>
+                                            <!-- Botones de acción -->
+                                            <a asp-controller="Libro" asp-action="Editar" asp-route-id="@libro.IdLibro"
+                                               class="btn btn-primary btn-sm me-1">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a asp-controller="Libro" asp-action="Eliminar" asp-route-id="@libro.IdLibro"
+                                               class="btn btn-danger btn-sm" onclick="return confirmar()">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             }
                         }
                         else
                         {
-                            <div class="no-items">
-                                <i class="fas fa-book"></i>
+                            <div class="no-items text-center p-3">
+                                <i class="fas fa-book fa-2x mb-2"></i>
                                 <p>No hay libros disponibles en este momento.</p>
                             </div>
                         }
                     </div>
                 </div>
             </div>
+
+            @section Scripts {
+                <script>
+                    function confirmar() {
+                        return confirm("¿Estás seguro de que quieres eliminar este libro?");
+                    }
+                </script>
+            }
+
         </div>
     </main>
 
