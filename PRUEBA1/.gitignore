@@ -1,0 +1,15 @@
+# Archivos de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Carpetas de compilación
+[Bb]in/
+[Oo]bj/
+
+# Otros
+*.dbmdl
+*.bak
+*.vscode/
