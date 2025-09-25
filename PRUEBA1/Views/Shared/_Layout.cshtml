@@ -4,20 +4,73 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - PRUEBA1</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PRUEBA1.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .navbar {
+            background: linear-gradient(45deg, #0d6efd, #6610f2);
+        }
+
+            .navbar .nav-link {
+                color: #fff !important;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
+                .navbar .nav-link:hover {
+                    color: #ffc107 !important;
+                    transform: translateY(-2px);
+                }
+
+        .navbar-brand {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff !important;
+        }
+
+        /* usuario */
+        .user-section {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+            footer a {
+                color: #0d6efd;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-dark shadow">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PRUEBA1</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-book-open"></i> Catálogo
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         @if (User.Identity.IsAuthenticated)
@@ -25,39 +78,39 @@
                             @if (User.IsInRole("1"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                                </li>                                
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Lista">Producto</a>
+                                    <a class="nav-link" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Inventario" asp-action="Lista">Inventarios</a>
+                                    <a class="nav-link" asp-controller="Producto" asp-action="Lista"><i class="fas fa-box"></i> Producto</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Admin">Rol</a>
+                                    <a class="nav-link" asp-controller="Inventario" asp-action="Lista"><i class="fas fa-warehouse"></i> Inventarios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Venta" asp-action="Lista">Ventas</a>
+                                    <a class="nav-link" asp-controller="Administrador" asp-action="Admin"><i class="fas fa-user-shield"></i> Rol</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="Lista">Pedidos</a>
+                                    <a class="nav-link" asp-controller="Venta" asp-action="Lista"><i class="fas fa-cash-register"></i> Venta</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Pedido" asp-action="Lista"><i class="fas fa-shopping-cart"></i> Pedidos</a>
                                 </li>
                             }
 
                             @if (User.IsInRole("2"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Inventario" asp-action="Lista">Inventarios</a>
+                                    <a class="nav-link" asp-controller="Inventario" asp-action="Lista"><i class="fas fa-warehouse"></i> Inventarios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="Nuevo">Nuevo Pedido</a>
+                                    <a class="nav-link" asp-controller="Pedido" asp-action="Nuevo"><i class="fas fa-plus-circle"></i> Nuevo Pedido</a>
                                 </li>
                             }
 
                             <li class="nav-item">
                                 <form asp-controller="Acceso" asp-action="Logout" method="post" class="d-inline">
                                     @Html.AntiForgeryToken()
-                                    <button type="submit" class="nav-link text-dark btn btn-link" style="border:none; background:none;">
+                                    <button type="submit" class="nav-link btn btn-link text-white" style="border:none;">
                                         <i class="fas fa-sign-out-alt"></i> Salir
                                     </button>
                                 </form>
@@ -66,10 +119,10 @@
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Acceso" asp-action="Login">Login</a>
+                                <a class="nav-link" asp-controller="Acceso" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Acceso" asp-action="Registro">Registro</a>
+                                <a class="nav-link" asp-controller="Acceso" asp-action="Registro"><i class="fas fa-user-plus"></i> Registro</a>
                             </li>
                         }
                     </ul>
@@ -77,27 +130,27 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <div class="user-section">
-                            <span class="navbar-text">
-                                <i class="fas fa-user-circle"></i>
-                                @User.Identity.Name
-                            </span>
+                            <i class="fas fa-user-circle"></i> @User.Identity.Name
                         </div>
                     }
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer>
         <div class="container">
-            &copy; 2025 - PRUEBA1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2025 - <strong>PRUEBA1</strong> |
+            <a asp-controller="Home" asp-action="Privacy">Política de Privacidad</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -3,56 +3,24 @@
   "WorkspaceRootPath": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\venta\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\venta\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\venta\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\venta\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\venta\\nueva.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\venta\\nueva.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\producto\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\producto\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\producto\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\producto\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\libro\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\libro\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\libro\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\libro\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\libro\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\libro\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\inventario\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\inventario\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\inventario\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\inventario\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|d:\\upn\\ciclo 8\\calidad y pruebas de software\\t1_cps\\prueba1\\views\\venta\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0C9CFF46-56A0-4326-956A-7437B528F2A1}|PRUEBA1\\PRUEBA1.csproj|solutionrelative:prueba1\\views\\venta\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,160 +42,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PedidoController.cs",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Controllers\\PedidoController.cs",
-              "RelativeDocumentMoniker": "PRUEBA1\\Controllers\\PedidoController.cs",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Controllers\\PedidoController.cs",
-              "RelativeToolTip": "PRUEBA1\\Controllers\\PedidoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T23:45:11.204Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Nuevo.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Producto\\Nuevo.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Producto\\Nuevo.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Producto\\Nuevo.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Producto\\Nuevo.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Eliminar.cshtml",
+              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Venta\\Eliminar.cshtml",
+              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Venta\\Eliminar.cshtml",
+              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Venta\\Eliminar.cshtml",
+              "RelativeToolTip": "PRUEBA1\\Views\\Venta\\Eliminar.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:38:32.86Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Lista.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Producto\\Lista.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Producto\\Lista.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Producto\\Lista.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Producto\\Lista.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:38:19.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "PRUEBA1\\Controllers\\ProductoController.cs",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "PRUEBA1\\Controllers\\ProductoController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T23:37:50.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAwCIBAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:34:07.055Z",
+              "WhenOpened": "2025-09-25T06:34:56.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Editar.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Libro\\Editar.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Libro\\Editar.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Libro\\Editar.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Libro\\Editar.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:24:58.793Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LibroController.cs",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Controllers\\LibroController.cs",
-              "RelativeDocumentMoniker": "PRUEBA1\\Controllers\\LibroController.cs",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Controllers\\LibroController.cs",
-              "RelativeToolTip": "PRUEBA1\\Controllers\\LibroController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowEAAAAAJAAAAAAAAAA==",
+              "Title": "Editar.cshtml",
+              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Venta\\Editar.cshtml",
+              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Venta\\Editar.cshtml",
+              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Venta\\Editar.cshtml*",
+              "RelativeToolTip": "PRUEBA1\\Views\\Venta\\Editar.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T06:34:47.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lista.cshtml",
+              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Venta\\Lista.cshtml",
+              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Venta\\Lista.cshtml",
+              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Venta\\Lista.cshtml*",
+              "RelativeToolTip": "PRUEBA1\\Views\\Venta\\Lista.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T06:34:00.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VentaController.cs",
+              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Controllers\\VentaController.cs",
+              "RelativeDocumentMoniker": "PRUEBA1\\Controllers\\VentaController.cs",
+              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Controllers\\VentaController.cs",
+              "RelativeToolTip": "PRUEBA1\\Controllers\\VentaController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwC0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T23:19:25.627Z"
+              "WhenOpened": "2025-09-25T06:30:58.678Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Nuevo.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Libro\\Nuevo.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Libro\\Nuevo.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Libro\\Nuevo.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Libro\\Nuevo.cshtml",
-              "ViewState": "AgIAAAcAAAAAAAAAAIAwwCEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Nueva.cshtml",
+              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Venta\\Nueva.cshtml",
+              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Venta\\Nueva.cshtml",
+              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Venta\\Nueva.cshtml",
+              "RelativeToolTip": "PRUEBA1\\Views\\Venta\\Nueva.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:19:21.793Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Lista.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Libro\\Lista.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Libro\\Lista.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Libro\\Lista.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Libro\\Lista.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:19:15.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:18:57.128Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAgwBwAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:17:43.374Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Nuevo.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Inventario\\Nuevo.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Inventario\\Nuevo.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Inventario\\Nuevo.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Inventario\\Nuevo.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:15:00.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Lista.cshtml",
-              "DocumentMoniker": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Inventario\\Lista.cshtml",
-              "RelativeDocumentMoniker": "PRUEBA1\\Views\\Inventario\\Lista.cshtml",
-              "ToolTip": "D:\\UPN\\CICLO 8\\Calidad y Pruebas de software\\T1_CPS\\PRUEBA1\\Views\\Inventario\\Lista.cshtml",
-              "RelativeToolTip": "PRUEBA1\\Views\\Inventario\\Lista.cshtml",
-              "ViewState": "AgIAAKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T23:15:00.069Z"
+              "WhenOpened": "2025-09-25T06:34:33.397Z",
+              "EditorCaption": ""
             }
           ]
         }

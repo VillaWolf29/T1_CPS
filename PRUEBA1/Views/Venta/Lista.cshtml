@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PRUEBA1.Models.Venta>
+
+@{
+    ViewBag.Title = "Lista de Ventas";
+}
+
+<h2>Lista de Ventas</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <div>@error.ErrorMessage</div>
+        }
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Método de Pago</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venta in Model)
+        {
+            <tr>
+                <td>@venta.IdVenta</td>
+                <td>@venta.Usuario?.Nombre</td>
+                <td>@venta.FechaVenta.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@venta.Total</td>
+                <td>@venta.MetodoPago</td>
+                <td>@venta.Estado</td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@venta.IdVenta" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Eliminar" asp-route-id="@venta.IdVenta" class="btn btn-danger btn-sm">Eliminar</a>
+                    <a asp-action="Activar" asp-route-id="@venta.IdVenta" class="btn btn-success btn-sm">Activar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Nueva" class="btn btn-primary">Nueva Venta</a>

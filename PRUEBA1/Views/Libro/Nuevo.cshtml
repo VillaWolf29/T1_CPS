@@ -4,30 +4,83 @@
 @{
 }
 @model PRUEBA1.Models.Libro;
-<div>
-    <div class="col-sm-8 offset-sm-2">
-        <h2>Nuevo</h2>
-        <form asp-controller="Libro" asp-action="Nuevo" method="post">
-            <div class="mb-3">
-                <label>Titulo</label>
-                <input class="form-control" type="text" required asp-for="Titulo" />
-            </div>    
-            <div class="mb-3">
-                <label>Autor</label>
-                <input class="form-control" type="text" required asp-for="Autor" />
-            </div>
-            <div class="mb-3">
-                <label>Genero</label>
-                <input class="form-control" type="text" required asp-for="Genero" />
-            </div>
-            <div class="mb-3">
-                <label>Fecha de Publicacion</label>
-                <input class="form-control" type="date" required asp-for="FechaPublicacion" />
-            </div>               
-            <div class="mb-3">
-                <button class="btn btn-primary" type="submit">Guardar</button>
-                <a asp-controller="Libro" asp-action="Lista" class="btn btn-warning">Volver</a>
-            </div>
-        </form>
+
+<div class="col-sm-8 offset-sm-2 mt-5">
+    <div class="card shadow-lg border-0 rounded-4 fade-in">
+        <div class="card-header bg-light text-center border-0 rounded-top-4">
+            <h2 class="fw-bold text-primary mb-0">📚 Nuevo Libro</h2>
+        </div>
+        <div class="card-body p-4">
+            <form asp-controller="Libro" asp-action="Nuevo" method="post">
+
+                <div class="mb-3">
+                    <label asp-for="Titulo" class="form-label fw-bold">Título</label>
+                    <input class="form-control shadow-sm" type="text" required asp-for="Titulo" />
+                    <span asp-validation-for="Titulo" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Autor" class="form-label fw-bold">Autor</label>
+                    <input class="form-control shadow-sm" type="text" required asp-for="Autor" />
+                    <span asp-validation-for="Autor" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Genero" class="form-label fw-bold">Género</label>
+                    <input class="form-control shadow-sm" type="text" required asp-for="Genero" />
+                    <span asp-validation-for="Genero" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="FechaPublicacion" class="form-label fw-bold">Fecha de Publicación</label>
+                    <input class="form-control shadow-sm" type="date" required asp-for="FechaPublicacion" />
+                    <span asp-validation-for="FechaPublicacion" class="text-danger small"></span>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-controller="Libro" asp-action="Lista" class="btn btn-warning px-4 py-2 fw-semibold shadow-sm hover-scale">
+                        ⬅ Volver
+                    </a>
+                    <button class="btn btn-primary px-4 py-2 fw-semibold shadow-sm hover-scale" type="submit">
+                        💾 Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
+<style>
+    /* Animación fade-in del card */
+    .fade-in {
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    /* Animacion para los botones */
+    .hover-scale {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hover-scale:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Inputs */
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 6px rgba(13, 110, 253, 0.5);
+    }
+</style>

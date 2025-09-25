@@ -1,0 +1,28 @@
+﻿@model PRUEBA1.Models.Venta
+
+@{
+    ViewBag.Title = "Eliminar Venta";
+}
+
+<h2>Eliminar Venta</h2>
+
+<div class="alert alert-warning">
+    ¿Seguro que deseas cancelar esta venta?
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.IdVenta</dd>
+    <dt class="col-sm-2">Usuario</dt>
+    <dd class="col-sm-10">@Model.Usuario?.Nombre</dd>
+    <dt class="col-sm-2">Total</dt>
+    <dd class="col-sm-10">@Model.Total</dd>
+    <dt class="col-sm-2">Estado</dt>
+    <dd class="col-sm-10">@Model.Estado</dd>
+</dl>
+
+<form asp-action="Eliminar" method="get">
+    <input type="hidden" asp-for="IdVenta" />
+    <button type="submit" class="btn btn-danger">Cancelar Venta</button>
+    <a asp-action="Lista" class="btn btn-secondary">Volver</a>
+</form>

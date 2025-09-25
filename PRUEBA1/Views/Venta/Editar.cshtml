@@ -1,0 +1,24 @@
+﻿@model PRUEBA1.Models.Venta
+
+@{
+    ViewBag.Title = "Editar Venta";
+}
+
+<h2>Editar Venta</h2>
+
+<form asp-action="Nueva" method="post">
+    <div class="form-group">
+        <label asp-for="IdUsuario"></label>
+        <select asp-for="IdUsuario" class="form-control" asp-items="ViewBag.Usuarios"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="MetodoPago"></label>
+        <select asp-for="MetodoPago" class="form-control" asp-items="ViewBag.MetodosPago"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Total"></label>
+        <input asp-for="Total" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a asp-action="Lista" class="btn btn-secondary">Volver</a>
+</form>

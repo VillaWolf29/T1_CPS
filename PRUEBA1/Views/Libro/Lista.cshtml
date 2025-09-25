@@ -1,37 +1,53 @@
 ﻿@model List<PRUEBA1.Models.Libro>
-    
-<div>
-    <h2>Libros</h2>
-    <a asp-controller="Libro" asp-action="Nuevo" class="btn btn-success mb-3">Nuevo</a>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titulo</th>
-                <th>Autor</th>
-                <th>Genero</th>
-                <th>FechaPublicacion</th>                
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.IdLibro</td>
-                    <td>@item.Titulo</td>
-                    <td>@item.Autor</td>
-                    <td>@item.Genero</td>
-                    <td>@item.FechaPublicacion.ToString()</td>                    
-                    <td>
-                        <a asp-controller="Libro" asp-action="Editar" asp-route-id="@item.IdLibro" class="btn btn-primary mb-3">Editar</a>
-                        <a asp-controller="Libro" asp-action="Eliminar" asp-route-id="@item.IdLibro" class="btn btn-danger" onclick="return confirmar()">Eliminar</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+
+<div class="col-sm-10 offset-sm-1 mt-5">
+    <div class="card shadow-lg border-0 rounded-4 fade-in">
+        <div class="card-header bg-light border-0 rounded-top-4 d-flex justify-content-between align-items-center">
+            <h2 class="fw-bold text-primary mb-0">📚 Libros</h2>
+            <a asp-controller="Libro" asp-action="Nuevo" class="btn btn-success fw-semibold shadow-sm hover-scale">
+                ➕ Nuevo
+            </a>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover align-middle text-center shadow-sm rounded-3 overflow-hidden">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Género</th>
+                        <th scope="col">Fecha Publicación</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdLibro</td>
+                            <td>@item.Titulo</td>
+                            <td>@item.Autor</td>
+                            <td>@item.Genero</td>
+                            <td>@item.FechaPublicacion.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                <a asp-controller="Libro" asp-action="Editar" asp-route-id="@item.IdLibro"
+                                   class="btn btn-primary btn-sm fw-semibold shadow-sm hover-scale me-2">
+                                    Editar
+                                </a>
+                                <a asp-controller="Libro" asp-action="Eliminar" asp-route-id="@item.IdLibro"
+                                   class="btn btn-danger btn-sm fw-semibold shadow-sm hover-scale"
+                                   onclick="return confirmar()">
+                                    Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+
 @section Scripts {
     <script>
         function confirmar() {
@@ -39,3 +55,17 @@
         }
     </script>
 }
+
+<style>
+
+    /* Botones */
+    .hover-scale {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hover-scale:hover {
+        transform: scale(1.07);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+</style>
