@@ -93,10 +93,10 @@ namespace PRUEBA1.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            }
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            //}
             return View();
         }
 
