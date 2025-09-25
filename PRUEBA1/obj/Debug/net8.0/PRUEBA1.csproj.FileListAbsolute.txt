@@ -509,10 +509,13 @@ D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\sta
 D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\staticwebassets.development.json
 D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\PRUEBA1.csproj.Up2Date
 D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\PRUEBA1.dll
 D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\refint\PRUEBA1.dll
 D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\PRUEBA1.pdb
 D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\PRUEBA1.genruntimeconfig.cache
 D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\ref\PRUEBA1.dll
+D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\bin\Debug\net8.0\Castle.Core.dll
+D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\bin\Debug\net8.0\Moq.dll
+D:\UPN\CICLO 8\Calidad y Pruebas de software\T1_CPS\PRUEBA1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

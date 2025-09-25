@@ -44,14 +44,16 @@ namespace PRUEBA1.Controllers
         {
             return RedirectToAction("Login", "Acceso");
         }
-        public IActionResult Rol() 
+        public IActionResult Rol()
         {
             return RedirectToAction("Admin", "Administrador");
         }
 
         //public IActionResult Lista()
         //{
-          // return RedirectToAction("Lista", "Libro");
+        // return RedirectToAction("Lista", "Libro");
         //}
+
+
     }
 }
