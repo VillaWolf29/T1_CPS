@@ -12,8 +12,11 @@ namespace PRUEBA1.Controllers
 {
     //Linea que protege a la Vista, comentar para realizar pruebas
     //[Authorize(Roles = "Administrador")]
+    [Authorize(Roles = "1")]
     public class LibroController : Controller
     {
+        
+
         private readonly AppDBContext _appDBcontext;
         public LibroController(AppDBContext appDBcontext)
         {
