@@ -41,19 +41,111 @@ namespace PRUEBA1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Nuevo(Pedido pedido)
         {
-            if (ModelState.IsValid)
+            Console.WriteLine($"=== DATOS RECIBIDOS ===");
+            Console.WriteLine($"IdUsuario: {pedido.IdUsuario}");
+            Console.WriteLine($"IdLibro: {pedido.IdLibro}");
+            Console.WriteLine($"IdProducto: {pedido.IdProducto}");
+            Console.WriteLine($"Cantidad: {pedido.Cantidad}");
+            Console.WriteLine($"FechaEntrega: {pedido.FechaEntrega}");
+
+            // Convertir 0 a null para campos nullable
+            if (pedido.IdLibro == 0) pedido.IdLibro = null;
+            if (pedido.IdProducto == 0) pedido.IdProducto = null;
+
+            // Validación personalizada
+            if (pedido.IdLibro == null && pedido.IdProducto == null)
             {
-                // valores por defecto
+                ModelState.AddModelError("", "Debe seleccionar al menos un libro o un producto");
+            }
+            ModelState.Remove("Usuario");
+            ModelState.Remove("Libro");
+            ModelState.Remove("Producto");
+
+            // Verificar estado del ModelState
+            Console.WriteLine($"ModelState.IsValid: {ModelState.IsValid}");
+
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("=== ERRORES DE VALIDACIÓN ===");
+                foreach (var state in ModelState)
+                {
+                    foreach (var error in state.Value.Errors)
+                    {
+                        Console.WriteLine($"{state.Key}: {error.ErrorMessage}");
+                    }
+                }
+
+                CargarSelectListas();
+                return View(pedido);
+            }
+
+            try
+            {
+                Console.WriteLine("=== INTENTANDO GUARDAR ===");
+
+                // Verificar que existan las entidades relacionadas
+                var usuarioExists = await _dbContext.Usuarios.AnyAsync(u => u.IdUsuario == pedido.IdUsuario);
+                if (!usuarioExists)
+                {
+                    ModelState.AddModelError("IdUsuario", "El usuario seleccionado no existe");
+                    CargarSelectListas();
+                    return View(pedido);
+                }
+
+                if (pedido.IdLibro.HasValue)
+                {
+                    var libroExists = await _dbContext.Libros.AnyAsync(l => l.IdLibro == pedido.IdLibro.Value);
+                    if (!libroExists)
+                    {
+                        ModelState.AddModelError("IdLibro", "El libro seleccionado no existe");
+                        CargarSelectListas();
+                        return View(pedido);
+                    }
+                }
+
+                if (pedido.IdProducto.HasValue)
+                {
+                    var productoExists = await _dbContext.productos.AnyAsync(p => p.IdProducto == pedido.IdProducto.Value);
+                    if (!productoExists)
+                    {
+                        ModelState.AddModelError("IdProducto", "El producto seleccionado no existe");
+                        CargarSelectListas();
+                        return View(pedido);
+                    }
+                }
+
+                // Asegurar valores por defecto
                 pedido.FechaReserva = DateTime.Now;
                 pedido.Estado = "Pendiente";
 
                 await _dbContext.pedidos.AddAsync(pedido);
                 await _dbContext.SaveChangesAsync();
+
+                Console.WriteLine("=== PEDIDO GUARDADO EXITOSAMENTE ===");
+
+                TempData["success"] = "Pedido creado exitosamente";
                 return RedirectToAction(nameof(Lista));
             }
+            catch (DbUpdateException dbEx)
+            {
+                Console.WriteLine($"=== ERROR DE BASE DE DATOS ===");
+                Console.WriteLine($"Mensaje: {dbEx.Message}");
+                Console.WriteLine($"Inner Exception: {dbEx.InnerException?.Message}");
 
-            CargarSelectListas();
-            return View(pedido);
+                ModelState.AddModelError("", "Error al guardar en la base de datos. Verifique que los datos sean válidos.");
+                CargarSelectListas();
+                return View(pedido);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"=== ERROR GENERAL ===");
+                Console.WriteLine($"Mensaje: {ex.Message}");
+                Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+
+                ModelState.AddModelError("", "Error inesperado al guardar el pedido.");
+                CargarSelectListas();
+                return View(pedido);
+            }
         }
 
         // EDITAR (GET)
@@ -72,6 +164,9 @@ namespace PRUEBA1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Editar(Pedido pedido)
         {
+            ModelState.Remove("Usuario");
+            ModelState.Remove("Libro");
+            ModelState.Remove("Producto");
             if (ModelState.IsValid)
             {
                 try
@@ -124,7 +219,7 @@ namespace PRUEBA1.Controllers
         {
             ViewBag.Usuarios = new SelectList(_dbContext.Usuarios, "IdUsuario", "Nombre");
             ViewBag.Libros = new SelectList(_dbContext.Libros, "IdLibro", "Titulo");
-            ViewBag.Productos = new SelectList(_dbContext.pedidos, "IdProducto", "Nombre");
+            ViewBag.Productos = new SelectList(_dbContext.productos, "IdProducto", "Nombre");
         }
     }
 }

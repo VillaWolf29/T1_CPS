@@ -32,7 +32,7 @@ namespace PRUEBA1.Controllers
         [HttpGet]
         public IActionResult Nuevo()
         {
-            var categorias = new List<string> { "Electrónicos", "Ropa", "Libros", "Hogar", "Deportes" };
+            var categorias = new List<string> { "Papeleria", "Libreria", "Libros" };
             ViewBag.Categorias = new SelectList(categorias);
             return View();
         }

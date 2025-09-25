@@ -40,6 +40,8 @@ namespace PRUEBA1.Controllers
         [HttpPost]
         public async Task<IActionResult> Nuevo(Inventario inventario)
         {
+            ModelState.Remove("Libro");
+            ModelState.Remove("Producto");
             if (ModelState.IsValid)
             {
                 // Validar que no exista un registro duplicado
@@ -85,6 +87,8 @@ namespace PRUEBA1.Controllers
         [HttpPost]
         public async Task<IActionResult> Editar(Inventario inventario)
         {
+            ModelState.Remove("Libro");
+            ModelState.Remove("Producto");
             if (ModelState.IsValid)
             {
                 // Validar stock no negativo

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace PRUEBA1.Controllers
 {
     //Linea que protege a la Vista, comentar para realizar pruebas
-    [Authorize(Roles= "Administrador")]
+    [Authorize(Roles= "1")]
     public class AdministradorController : Controller
     {
         private readonly AppDBContext _appDBcontext;

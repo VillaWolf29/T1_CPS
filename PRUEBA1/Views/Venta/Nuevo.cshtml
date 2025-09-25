@@ -1,0 +1,282 @@
+﻿@model PRUEBA1.Models.Venta
+
+@using PRUEBA1.Data
+@using PRUEBA1.Models
+@inject AppDBContext _dbContext
+
+<div class="container">
+    <h2>Nueva Venta</h2>
+    <hr />
+
+    <form asp-action="Nuevo" id="ventaForm">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label asp-for="IdUsuario" class="control-label">Usuario</label>
+                    <select asp-for="IdUsuario" class="form-control" asp-items="ViewBag.Usuarios">
+                        <option value="">Seleccionar Usuario</option>
+                    </select>
+                    <span asp-validation-for="IdUsuario" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="FechaVenta" class="control-label">Fecha de Venta</label>
+                    <input asp-for="FechaVenta" class="form-control" type="datetime-local" />
+                    <span asp-validation-for="FechaVenta" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label asp-for="MetodoPago" class="control-label">Método de Pago</label>
+                    <select asp-for="MetodoPago" class="form-control" asp-items="ViewBag.MetodosPago">
+                        <option value="">Seleccionar Método</option>
+                    </select>
+                    <span asp-validation-for="MetodoPago" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Estado" class="control-label">Estado</label>
+                    <select asp-for="Estado" class="form-control" asp-items="ViewBag.Estados">
+                        <option value="">Seleccionar Estado</option>
+                    </select>
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección para Detalles de Venta -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Detalles de la Venta</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Producto</label>
+                        <select id="productoSelect" class="form-control">
+                            <option value="">Seleccionar Producto</option>
+                            @foreach (var producto in ViewBag.Productos as SelectList)
+                            {
+                                <option value="@producto.Value" data-precio="@(_dbContext.productos.Find(int.Parse(producto.Value))?.Precio ?? 0)">
+                                    @producto.Text
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Cantidad</label>
+                        <input type="number" id="cantidadInput" class="form-control" min="1" value="1">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Precio Unitario</label>
+                        <input type="number" id="precioInput" class="form-control" step="0.01" min="0" readonly>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Subtotal</label>
+                        <input type="text" id="subtotalInput" class="form-control" readonly>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="button" id="agregarProducto" class="btn btn-success w-100">
+                            <i class="fas fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="tablaDetalles">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Subtotal</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los detalles se agregarán dinámicamente aquí -->
+                        </tbody>
+                        <tfoot>
+                            <tr class="table-primary">
+                                <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                                <td colspan="2">
+                                    <strong id="totalVenta">$0.00</strong>
+                                    <input type="hidden" asp-for="Total" id="totalInput" />
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campos ocultos para los detalles -->
+        <div id="detallesVenta">
+            <!-- Los detalles se agregarán dinámicamente aquí -->
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Guardar Venta
+            </button>
+            <a href="@Url.Action("Lista")" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver a la Lista
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        let detalles = [];
+        let contadorDetalles = 0;
+
+        // Cuando se selecciona un producto
+        $('#productoSelect').change(function () {
+            var precio = $(this).find('option:selected').data('precio');
+            $('#precioInput').val(precio || 0);
+            calcularSubtotal();
+        });
+
+        // Calcular subtotal cuando cambia cantidad
+        $('#cantidadInput').on('input', calcularSubtotal);
+
+        function calcularSubtotal() {
+            var cantidad = parseInt($('#cantidadInput').val()) || 0;
+            var precio = parseFloat($('#precioInput').val()) || 0;
+            var subtotal = cantidad * precio;
+            $('#subtotalInput').val('$' + subtotal.toFixed(2));
+        }
+
+        // Agregar producto a la tabla
+        $('#agregarProducto').click(function () {
+            var productoId = $('#productoSelect').val();
+            var productoText = $('#productoSelect option:selected').text();
+            var cantidad = parseInt($('#cantidadInput').val());
+            var precio = parseFloat($('#precioInput').val());
+
+            if (!productoId || cantidad <= 0 || precio <= 0) {
+                alert('Por favor complete todos los campos correctamente');
+                return;
+            }
+
+            // Verificar si el producto ya fue agregado
+            var productoExistente = detalles.find(d => d.IdProducto == productoId);
+            if (productoExistente) {
+                if (confirm('Este producto ya fue agregado. ¿Desea actualizar la cantidad?')) {
+                    productoExistente.Cantidad = cantidad;
+                    productoExistente.Subtotal = cantidad * precio;
+                    actualizarTablaDetalles();
+                    limpiarCamposProducto();
+                    return;
+                } else {
+                    return;
+                }
+            }
+
+            // Agregar a la lista de detalles
+            var detalle = {
+                IdProducto: productoId,
+                ProductoNombre: productoText,
+                Cantidad: cantidad,
+                PrecioUnitario: precio,
+                Subtotal: cantidad * precio
+            };
+
+            detalles.push(detalle);
+            actualizarTablaDetalles();
+            actualizarCamposOcultos();
+            limpiarCamposProducto();
+        });
+
+        function actualizarTablaDetalles() {
+            var tbody = $('#tablaDetalles tbody');
+            tbody.empty();
+
+            detalles.forEach(function (detalle, index) {
+                var row = `<tr>
+                    <td>${detalle.ProductoNombre}</td>
+                    <td>${detalle.Cantidad}</td>
+                    <td>$${detalle.PrecioUnitario.toFixed(2)}</td>
+                    <td>$${detalle.Subtotal.toFixed(2)}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="eliminarDetalle(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>`;
+                tbody.append(row);
+            });
+
+            actualizarTotal();
+        }
+
+        function eliminarDetalle(index) {
+            detalles.splice(index, 1);
+            actualizarTablaDetalles();
+            actualizarCamposOcultos();
+        }
+
+        function limpiarCamposProducto() {
+            $('#productoSelect').val('');
+            $('#cantidadInput').val(1);
+            $('#precioInput').val('');
+            $('#subtotalInput').val('');
+        }
+
+        function actualizarTotal() {
+            var total = detalles.reduce((sum, detalle) => sum + detalle.Subtotal, 0);
+            $('#totalVenta').text('$' + total.toFixed(2));
+            $('#totalInput').val(total);
+        }
+
+        function actualizarCamposOcultos() {
+            var contenedor = $('#detallesVenta');
+            contenedor.empty();
+
+            detalles.forEach(function (detalle, index) {
+                contenedor.append(`
+                    <input type="hidden" name="detalles[${index}].IdProducto" value="${detalle.IdProducto}" />
+                    <input type="hidden" name="detalles[${index}].Cantidad" value="${detalle.Cantidad}" />
+                    <input type="hidden" name="detalles[${index}].PrecioUnitario" value="${detalle.PrecioUnitario}" />
+                    <input type="hidden" name="detalles[${index}].Subtotal" value="${detalle.Subtotal}" />
+                `);
+            });
+        }
+
+        // Validar antes de enviar el formulario
+        $('#ventaForm').submit(function (e) {
+            if (detalles.length === 0) {
+                e.preventDefault();
+                alert('Debe agregar al menos un producto a la venta');
+                return false;
+            }
+
+            // Asegurarse de que los campos ocultos estén actualizados
+            actualizarCamposOcultos();
+        });
+
+        // Inicializar fecha actual si está vacía
+        $(document).ready(function () {
+            var fechaInput = $('#FechaVenta');
+            if (!fechaInput.val()) {
+                var now = new Date();
+                now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                fechaInput.val(now.toISOString().slice(0, 16));
+            }
+
+            // Establecer estado por defecto
+            var estadoSelect = $('#Estado');
+            if (!estadoSelect.val()) {
+                estadoSelect.val('Completada');
+            }
+        });
+    </script>
+}
